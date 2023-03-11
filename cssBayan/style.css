@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-top: 5px;
+  margin-bottom: -10px;
+}
+
+body {
+  max-width: 1920px;
+  background-color: burlywood;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.faq {
+  max-width: 30%;
+  margin: 20px auto;
+}
+
+.faq:hover {
+  cursor: pointer;
+}
+
+.faq-title {
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 15px;
+  position: relative;
+  transition: all 0.2s linear;
+}
+
+.faq-title:after {
+  display: block;
+  top: 50%;
+  right: 15px;
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #fff transparent transparent transparent;
+}
+.faq-title:hover {
+  color: black;
+}
+
+.faq-item {
+  margin: 5px 0;
+  border: 1px solid rgb(240, 157, 211);
+  border-radius: 4px;
+  background-color: rgb(199, 123, 230);
+  animation-duration: 2s;
+  animation-name: slidein;
+  font-weight: bold;
+}
+
+.faq-text {
+  display: none;
+  padding: 10px 15px;
+  transition: all 2s linear;
+}
+
+.faq-input {
+  appearance: none;
+  position: absolute;
+  transition: all 2s linear;
+}
+
+.faq-input:checked ~ .faq-text {
+  display: block;
+  text-align: center;
+}
+
+.faq-input:checked ~ .faq-title {
+  color: black;
+}
+
+.faq-input:checked ~ .faq-title:after,
+.faq-input:hover ~ .faq-title:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 50%;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #111;
+}
+
+.faq-input:hover ~ .faq-text {
+  display: block;
+  text-align: center;
+  animation-duration: 1s;
+  animation-name: slidein2;
+}
+
+.faq-img {
+  width: 50%;
+  height: auto;
+  animation-name: Appearance;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+}
+
+.faq-img:hover {
+    transform: rotate(1turn);
+    transition: 1s ease-in-out;
+}
+
+@-webkit-keyframes Appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes Appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes Appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slidein2 {
+  from {
+    width: 80%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .faq {
+    max-width: 60%;
+    margin: 20px auto;
+  }
+  .faq-title {
+
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 450px) {
+  .faq {
+    max-width: 90%;
+    margin: 20px auto;
+  }
+  .faq-title {
+
+    font-size: 20px;
+
+  }
+}
