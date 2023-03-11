@@ -1,44 +1,96 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    max-width: 1920px;
+  max-width: 1920px;
 }
 
 .faq {
-    max-width: 50%;
-    margin: 20px auto;
+  max-width: 30%;
+  margin: 20px auto;
 }
 
 .faq-title {
-    display: block;
-    cursor: pointer;
-    padding: 10px 15px;
+  display: block;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: all 2s linear;
 }
 
 .faq-item {
-    border: 1px solid gray;
+  margin: 5px 0;
+  border: 1px solid gray;
+  animation-duration: 2s;
+  animation-name: slidein;
 }
 
 .faq-text {
-    display: none;
-    padding: 10px 15px;
+  display: none;
+  padding: 10px 15px;
+  transition: all 2s linear;
 }
 
 .faq-input {
-    appearance: none;
-    position: absolute;
+  appearance: none;
+  position: absolute;
+  transition: all 2s linear;
 }
 
-.faq-input:checked + .faq-text{
-    display: block;
-    text-align: center;
+.faq-input:checked ~ .faq-text {
+  display: block;
+  text-align: center;
+}
+
+.faq-input:hover ~ .faq-text {
+  display: block;
+  text-align: center;
+  animation-duration: 1s;
+  animation-name: slidein2;
 }
 
 .faq-img {
-    width: 50%;
-    height: auto;
+  width: 50%;
+  height: auto;
+  animation-name: Appearance;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
 }
+
+@-webkit-keyframes Appearance {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  @-o-keyframes Appearance {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  @-moz-keyframes Appearance {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+  @keyframes slidein2 {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
