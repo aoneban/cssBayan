@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1920px;
+}
+
+.faq {
+    max-width: 50%;
+    margin: 20px auto;
+}
+
+.faq-title {
+    display: block;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.faq-item {
+    border: 1px solid gray;
+}
+
+.faq-text {
+    display: none;
+    padding: 10px 15px;
+}
+
+.faq-input {
+    appearance: none;
+    position: absolute;
+}
+
+.faq-input:checked + .faq-text{
+    display: block;
+    text-align: center;
+}
+
+.faq-img {
+    width: 50%;
+    height: auto;
+}
